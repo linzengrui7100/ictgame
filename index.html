@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ICT设备认知游戏</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/connection-line.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>ICT设备认知游戏</h1>
+            <div class="score-container">分数: <span id="score">0</span></div>
+        </div>
+        
+        <div class="game-content">
+            <div id="start-screen" class="screen active">
+                <h2>欢迎来到ICT设备游戏</h2>
+                <p>通过有趣的方式认识常见的ICT设备</p>
+                <button id="start-btn" class="btn">开始三关挑战</button>
+                 <p>挑战三关：了解 → 认识 → 掌握，获得通关勋章！</p>
+                   <div class="game-modes">
+                    <button class="mode-btn" data-mode="match">设备连连看</button>
+                    <button class="mode-btn" data-mode="quiz">知识大闯关</button>
+                    <button class="mode-btn" data-mode="memory">功能对对碰</button>
+                </div>
+            </div>
+            
+            <div id="match-game" class="screen game-screen">
+                <h2>设备连连看</h2>
+                <p>将设备名称拖拽到对应的图片上</p>
+                <div class="match-container">
+                    <div class="device-images" id="device-images"></div>
+                    <div class="device-names" id="device-names"></div>
+                </div>
+                <button id="match-back-btn" class="back-btn">返回主界面</button>
+            </div>
+            
+            <div id="quiz-game" class="screen game-screen">
+                <h2>知识大闯关</h2>
+                <div class="quiz-container">
+                    <div class="quiz-image" id="quiz-image"></div>
+                    <div class="quiz-question" id="quiz-question"></div>
+                    <div class="quiz-options" id="quiz-options"></div>
+                </div>
+                <button id="quiz-back-btn" class="back-btn">返回主界面</button>
+            </div>
+            
+            <div id="memory-game" class="screen game-screen">
+                <h2>功能对对碰</h2>
+                <p>选择设备并匹配其功能描述</p>
+                <div class="memory-container" id="memory-container"></div>
+                <button id="memory-back-btn" class="back-btn">返回主界面</button>
+            </div>
+            
+            <div id="result-screen" class="screen">
+                <h2>游戏结束</h2>
+                <p>你的分数: <span id="final-score">0</span></p>
+                <div id="device-learned"></div>
+                <div id="knowledge-card" class="knowledge-card">
+                    <h3>知识卡片</h3>
+                    <button id="download-card-btn" class="btn">下载知识卡片</button>
+                </div>
+                <button id="play-again-btn" class="btn">再玩一次</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/data.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="./js/game.js"></script>
+</body>
+</html>
